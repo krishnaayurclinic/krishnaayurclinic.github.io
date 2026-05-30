@@ -332,32 +332,136 @@
       font-weight: 500;
     }
 
-    /* GALLERY */
-    .gallery { background: var(--cream-dark); }
+    /* GALLERY CAROUSEL */
+    .gallery { background: var(--cream-dark); overflow: hidden; }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+    .carousel-wrapper {
+      position: relative;
       margin-top: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     }
 
-    .gallery-grid img {
+    .carousel-track-outer {
+      overflow: hidden;
       width: 100%;
-      aspect-ratio: 4/3;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-slide::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 30%;
+      background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+      pointer-events: none;
+    }
+
+    /* Prev / Next buttons */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.92);
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--green-dark);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transition: all 0.2s;
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      background: var(--white);
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+    }
+
+    .carousel-btn.prev { left: 1rem; }
+    .carousel-btn.next { right: 1rem; }
+
+    /* Dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.2rem;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      background: var(--green-dark);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* Thumbnails */
+    .carousel-thumbs {
+      display: flex;
+      gap: 8px;
+      margin-top: 1rem;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .carousel-thumbs::-webkit-scrollbar { display: none; }
+
+    .carousel-thumb {
+      min-width: 80px;
+      height: 60px;
       object-fit: cover;
       border-radius: 6px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      opacity: 0.55;
+      transition: all 0.3s;
+      border: 2px solid transparent;
     }
 
-    .gallery-grid img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    .carousel-thumb.active {
+      opacity: 1;
+      border-color: var(--gold);
+      transform: scale(1.05);
     }
 
-    .gallery-grid img:first-child {
-      grid-column: span 2;
-      aspect-ratio: 16/9;
+    @media (max-width: 768px) {
+      .carousel-slide img { height: 280px; }
+      .carousel-thumb { min-width: 60px; height: 45px; }
     }
 
     /* SPECIALTIES */
@@ -607,7 +711,7 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://wa.me/918971570637" class="nav-cta" target="_blank">Book Appointment</a></li>
     </ul>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">
+    <button class="nav-toggle">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -660,14 +764,34 @@
       <p class="section-label">Our Clinic</p>
       <h2 class="section-title">A Healing Space</h2>
       <div class="section-divider"></div>
-      <div class="gallery-grid">
-        <img src="images/clinic-1.jpeg" alt="Krishna Ayurveda Clinic Mulki Interior">
-        <img src="images/clinic-2.jpeg" alt="Ayurvedic Treatment Room">
-        <img src="images/clinic-3.jpeg" alt="Ayurvedic Herbs and Medicines">
-        <img src="images/clinic-4.jpeg" alt="Dr Swathi Consultation">
-        <img src="images/clinic-5.jpeg" alt="Ayurvedic Therapy">
-        <img src="images/clinic-6.jpeg" alt="Natural Ayurvedic Medicines">
-        <img src="images/clinic-7.jpeg" alt="Krishna Ayurveda Clinic">
+      <div class="carousel-wrapper">
+        <div class="carousel-track-outer">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide"><img src="images/clinic-1.jpeg" alt="Krishna Ayurveda Clinic Mulki Interior" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/clinic-2.jpeg" alt="Ayurvedic Treatment Room" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/clinic-3.jpeg" alt="Ayurvedic Herbs and Medicines" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/clinic-4.jpeg" alt="Dr Swathi Consultation" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/clinic-5.jpeg" alt="Ayurvedic Therapy" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/clinic-6.jpeg" alt="Natural Ayurvedic Medicines" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/clinic-7.jpeg" alt="Krishna Ayurveda Clinic" loading="lazy"></div>
+          </div>
+        </div>
+        <button class="carousel-btn prev" onclick="carouselMove(-1)">&#8592;</button>
+        <button class="carousel-btn next" onclick="carouselMove(1)">&#8594;</button>
+      </div>
+
+      <!-- Dots -->
+      <div class="carousel-dots" id="carouselDots"></div>
+
+      <!-- Thumbnails -->
+      <div class="carousel-thumbs" id="carouselThumbs">
+        <img src="images/clinic-1.jpeg" class="carousel-thumb active" onclick="carouselGoTo(0)" alt="Clinic 1">
+        <img src="images/clinic-2.jpeg" class="carousel-thumb" onclick="carouselGoTo(1)" alt="Clinic 2">
+        <img src="images/clinic-3.jpeg" class="carousel-thumb" onclick="carouselGoTo(2)" alt="Clinic 3">
+        <img src="images/clinic-4.jpeg" class="carousel-thumb" onclick="carouselGoTo(3)" alt="Clinic 4">
+        <img src="images/clinic-5.jpeg" class="carousel-thumb" onclick="carouselGoTo(4)" alt="Clinic 5">
+        <img src="images/clinic-6.jpeg" class="carousel-thumb" onclick="carouselGoTo(5)" alt="Clinic 6">
+        <img src="images/clinic-7.jpeg" class="carousel-thumb" onclick="carouselGoTo(6)" alt="Clinic 7">
       </div>
     </div>
   </section>
@@ -815,5 +939,76 @@
     </div>
   </footer>
 
+  <script>
+    // Carousel
+    const total = 7;
+    let current = 0;
+    let autoplay;
+
+    const track = document.getElementById('carouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    const thumbs = document.querySelectorAll('.carousel-thumb');
+
+    // Create dots
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.onclick = () => carouselGoTo(i);
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${current * 100}%)`;
+      // Update dots
+      document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+      // Update thumbs
+      thumbs.forEach((t, i) => {
+        t.classList.toggle('active', i === current);
+      });
+      // Scroll active thumb into view
+      thumbs[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+
+    function carouselMove(dir) {
+      current = (current + dir + total) % total;
+      updateCarousel();
+      resetAutoplay();
+    }
+
+    function carouselGoTo(idx) {
+      current = idx;
+      updateCarousel();
+      resetAutoplay();
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoplay);
+      autoplay = setInterval(() => carouselMove(1), 4000);
+    }
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) carouselMove(diff > 0 ? 1 : -1);
+    });
+
+    // Pause on hover
+    document.querySelector('.carousel-wrapper').addEventListener('mouseenter', () => clearInterval(autoplay));
+    document.querySelector('.carousel-wrapper').addEventListener('mouseleave', resetAutoplay);
+
+    // Start autoplay
+    resetAutoplay();
+
+    // Mobile nav toggle
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
 </body>
 </html>
