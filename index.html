@@ -1083,7 +1083,7 @@
       /* Hero image — show top of image on mobile (where the subject usually is) */
       .hero { background-position: center top !important; }
       /* Services grid — stack on mobile */
-      .services-grid { grid-template-columns: 1fr !important; }
+      .services-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
       /* Nav */
       nav { padding: 0 1rem; }
       .nav-logo span { font-size: 0.95rem !important; }
@@ -1309,20 +1309,16 @@
 
   <!-- SERVICES MENU -->
   <section style="background: var(--white); padding: 4rem 2rem;">
-    <div class="section-inner">
+    <div style="max-width:1400px; margin:0 auto;">
       <p class="section-label reveal">Our Services</p>
       <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:0.5rem;">Services at a Glance</h2>
       <div class="lotus-divider reveal reveal-delay-2">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C9 6 6 8 6 12c0 3.3 2.7 6 6 6s6-2.7 6-6c0-4-3-6-6-10z" fill="#c9a84c" opacity="0.7"/><path d="M12 8C10 10 8 11 8 13c0 2.2 1.8 4 4 4s4-1.8 4-4c0-2-2-3-4-5z" fill="#c9a84c"/></svg>
       </div>
       <p style="color:var(--text-light); margin-bottom:2rem; font-size:0.95rem;">Available in English & Kannada for our local community.</p>
-      <div class="services-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
-        <div style="text-align:center;">
-          <img src="images/services-1.jpeg" alt="Krishna Ayurveda Clinic services list English — Mulki Mangalore" style="width:100%; height:500px; object-fit:contain; background:var(--cream); border-radius:10px; box-shadow:0 8px 30px rgba(0,0,0,0.12);">
-        </div>
-        <div style="text-align:center;">
-          <img src="images/services-2.jpeg" alt="Krishna Ayurveda Clinic services list Kannada — Mulki Mangalore" style="width:100%; height:500px; object-fit:contain; background:var(--cream); border-radius:10px; box-shadow:0 8px 30px rgba(0,0,0,0.12);">
-        </div>
+      <div class="services-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; width:100%;">
+        <img src="images/services-1.jpeg" alt="Krishna Ayurveda Clinic services list English — Mulki Mangalore" style="width:100%; height:auto; display:block; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,0.12);">
+        <img src="images/services-2.jpeg" alt="Krishna Ayurveda Clinic services list Kannada — Mulki Mangalore" style="width:100%; height:auto; display:block; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,0.12);">
       </div>
     </div>
   </section>
