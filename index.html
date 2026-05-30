@@ -746,33 +746,92 @@
       transition: all 0.3s;
     }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE — TABLET */
     @media (max-width: 768px) {
-      .nav-links { display: none; }
+      /* Nav */
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(250,247,240,0.98); backdrop-filter: blur(8px); padding: 1rem 2rem 2rem; gap: 1rem; border-bottom: 1px solid var(--gold-light); z-index: 99; }
+      .nav-links.open { display: flex; }
       .nav-toggle { display: flex; }
+      .nav-cta { text-align: center; }
 
-      .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-      }
+      /* Hero */
+      .hero { min-height: 100svh; }
+      .hero-content { padding: 2rem 1.5rem; }
+      .hero-text h1 { font-size: 2.2rem; }
 
-      .hero-image { order: -1; }
-      .hero-image img { max-width: 280px; }
-      .hero-buttons { justify-content: center; }
-
-      .about-grid,
-      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-
+      /* About */
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .about-image::after { display: none; }
+      .about-image img { aspect-ratio: 4/3; }
 
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      /* Sections padding */
+      section { padding: 3rem 1.25rem; }
 
-      .gallery-grid img:first-child {
-        grid-column: span 2;
-      }
+      /* Specialties */
+      .specialties-grid { grid-template-columns: 1fr; }
+
+      /* Timings */
+      .timings-grid { grid-template-columns: 1fr 1fr; }
+
+      /* Contact */
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-map iframe { height: 250px; }
+
+      /* Carousel */
+      .carousel-slide { height: 320px; }
+      .carousel-btn { width: 36px; height: 36px; font-size: 1rem; }
+      .carousel-thumb { min-width: 55px; height: 42px; }
+
+      /* Feature images */
+      .feature-img { width: 100%; }
+
+      /* Footer */
+      .footer-links { gap: 1rem; }
+    }
+
+    /* RESPONSIVE — MOBILE */
+    @media (max-width: 480px) {
+      /* Nav */
+      nav { padding: 0 1rem; }
+      .nav-logo span { font-size: 0.95rem !important; }
+
+      /* Hero */
+      .hero-content { padding: 2rem 1rem; }
+      .hero-text h1 { font-size: 1.9rem; }
+      .hero-text p { font-size: 0.95rem; }
+      .btn-primary, .btn-secondary { padding: 0.75rem 1.5rem; font-size: 0.9rem; width: 100%; text-align: center; }
+      .hero-buttons { flex-direction: column; gap: 0.75rem; }
+
+      /* Logo in hero */
+      .hero-content img[src*="logo"] { height: 120px !important; }
+
+      /* Section titles */
+      .section-title { font-size: 1.7rem; }
+
+      /* About */
+      .credentials { gap: 0.5rem; }
+      .credential-badge { font-size: 0.78rem; padding: 0.4rem 0.75rem; }
+
+      /* Specialties */
+      .specialty-card { padding: 1.5rem; }
+      .specialty-card h3 { font-size: 1.1rem; }
+
+      /* Timings */
+      .timings-grid { grid-template-columns: 1fr; }
+      .timing-card { padding: 1.25rem; }
+
+      /* Contact */
+      .contact-item { gap: 0.75rem; }
+      .whatsapp-btn { width: 100%; justify-content: center; }
+
+      /* Carousel */
+      .carousel-slide { height: 260px; }
+      .carousel-btn.prev { left: 0.5rem; }
+      .carousel-btn.next { right: 0.5rem; }
+
+      /* Footer */
+      .footer-links { flex-direction: column; gap: 0.75rem; align-items: center; }
+      .footer-logo { font-size: 1.2rem; }
     }
   </style>
 </head>
@@ -1106,9 +1165,14 @@
     resetAutoplay();
 
     // Mobile nav toggle
-    document.querySelector('.nav-toggle').addEventListener('click', function() {
-      const links = document.querySelector('.nav-links');
-      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('open');
+    });
+    // Close nav when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
   </script>
 </body>
