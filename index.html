@@ -793,6 +793,8 @@
     @media (max-width: 480px) {
       /* Hero image — show top of image on mobile (where the subject usually is) */
       .hero { background-position: center top !important; }
+      /* Services grid — stack on mobile */
+      .services-grid { grid-template-columns: 1fr !important; }
       /* Nav */
       nav { padding: 0 1rem; }
       .nav-logo span { font-size: 0.95rem !important; }
@@ -987,6 +989,26 @@
           <div class="specialty-icon">🧘</div>
           <h3>Panchakarma Guidance</h3>
           <p>Expert consultation and guidance for Panchakarma detoxification therapies tailored to your Prakriti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES MENU -->
+  <section style="background: var(--white); padding: 4rem 2rem;">
+    <div class="section-inner">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title" style="margin-bottom:0.5rem;">Services at a Glance</h2>
+      <div class="section-divider"></div>
+      <p style="color:var(--text-light); margin-bottom:2rem; font-size:0.95rem;">Available in English & Kannada for our local community.</p>
+      <div class="services-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <div style="text-align:center;">
+          <p style="font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-mid); font-weight:600; margin-bottom:0.75rem;">English</p>
+          <img src="images/services-1.jpeg" alt="Krishna Ayurveda Clinic services list English — Mulki Mangalore" style="width:100%; border-radius:10px; box-shadow:0 8px 30px rgba(0,0,0,0.12);">
+        </div>
+        <div style="text-align:center;">
+          <p style="font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-mid); font-weight:600; margin-bottom:0.75rem;">ಕನ್ನಡ</p>
+          <img src="images/services-2.jpeg" alt="Krishna Ayurveda Clinic services list Kannada — Mulki Mangalore" style="width:100%; border-radius:10px; box-shadow:0 8px 30px rgba(0,0,0,0.12);">
         </div>
       </div>
     </div>
