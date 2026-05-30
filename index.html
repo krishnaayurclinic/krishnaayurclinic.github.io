@@ -1010,8 +1010,11 @@
       thumbs.forEach((t, i) => {
         t.classList.toggle('active', i === current);
       });
-      // Scroll active thumb into view
-      thumbs[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      // Scroll active thumb into view (horizontal only, no page scroll)
+      const thumbsContainer = document.getElementById('carouselThumbs');
+      const activeThumb = thumbs[current];
+      const offset = activeThumb.offsetLeft - (thumbsContainer.offsetWidth / 2) + (activeThumb.offsetWidth / 2);
+      thumbsContainer.scrollTo({ left: offset, behavior: 'smooth' });
     }
 
     function carouselMove(dir) {
