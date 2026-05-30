@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna Ayurveda Clinic | Dr. Swathi BAMS, MD (Ayu) | Ayurvedic Clinic in Mulki, Mangalore</title>
+  <meta name="description" content="Krishna Ayurveda Clinic in Mulki, Mangalore offers authentic Ayurvedic treatments by Dr. Swathi for pain management, skin disorders, digestive issues, respiratory conditions, PCOD, women's health, Panchakarma guidance, and holistic wellness.">
+  <meta name="keywords" content="Ayurveda Mulki, Ayurvedic Clinic Mangalore, Dr Swathi BAMS, Panchakarma, Ayurvedic treatment, holistic wellness, pain management ayurveda">
+  <link rel="canonical" href="https://krishnaayurclinic.github.io">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Krishna Ayurveda Clinic | Dr. Swathi BAMS, MD (Ayu)">
+  <meta property="og:description" content="Authentic Ayurvedic treatments by Dr. Swathi in Mulki, Mangalore.">
+  <meta property="og:image" content="https://krishnaayurclinic.github.io/images/c46f96_6a64cfa4f84c486dacb327ebdda7c150~mv2.png">
+  <meta property="og:url" content="https://krishnaayurclinic.github.io">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Krishna Ayurveda Clinic",
+    "url": "https://krishnaayurclinic.github.io",
+    "telephone": "+91-8971570637",
+    "email": "krishnaayurclinic@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jalaka Road, Bappanadu Village",
+      "addressLocality": "Mulki",
+      "addressRegion": "Karnataka",
+      "postalCode": "574154",
+      "addressCountry": "IN"
+    },
+    "medicalSpecialty": "Ayurvedic Medicine",
+    "founder": {
+      "@type": "Physician",
+      "name": "Dr. Swathi",
+      "honorificSuffix": "BAMS, MD (Ayu) Kayachikitsa"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+        "opens": "10:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+        "opens": "17:00",
+        "closes": "19:00"
+      }
+    ],
+    "areaServed": ["Mulki","Mangalore","Udupi","Dakshina Kannada"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green-dark: #2d5016;
+      --green-mid: #4a7c2e;
+      --green-light: #7aad4e;
+      --gold: #c9a84c;
+      --gold-light: #e8d5a3;
+      --cream: #faf7f0;
+      --cream-dark: #f0ebe0;
+      --white: #ffffff;
+      --text-dark: #1a1a1a;
+      --text-mid: #3d3d3d;
+      --text-light: #6b6b6b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250,247,240,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gold-light);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      text-decoration: none;
+      line-height: 1.2;
+    }
+
+    .nav-logo span {
+      display: block;
+      font-size: 0.75rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 400;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--green-mid); }
+
+    .nav-cta {
+      background: var(--green-dark);
+      color: var(--white) !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 4px;
+      font-size: 0.85rem !important;
+    }
+
+    .nav-cta:hover { background: var(--green-mid); color: var(--white) !important; }
+
+    /* HERO */
+    .hero {
+      margin-top: 70px;
+      min-height: 92vh;
+      background: linear-gradient(135deg, var(--green-dark) 0%, #3d6b1f 50%, var(--green-mid) 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/c46f96_6a64cfa4f84c486dacb327ebdda7c150~mv2.png') center/cover no-repeat;
+      opacity: 0.15;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 span { color: var(--gold-light); }
+
+    .hero-text .tagline {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-text p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--green-dark);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      object-fit: cover;
+      aspect-ratio: 3/4;
+    }
+
+    /* SECTION COMMON */
+    section { padding: 5rem 2rem; }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--green-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    /* ABOUT */
+    .about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 60%;
+      height: 60%;
+      border: 3px solid var(--gold);
+      border-radius: 8px;
+      z-index: -1;
+    }
+
+    .about-text p {
+      color: var(--text-mid);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .credentials {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .credential-badge {
+      background: var(--cream);
+      border: 1px solid var(--gold-light);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--green-dark);
+      font-weight: 500;
+    }
+
+    /* GALLERY */
+    .gallery { background: var(--cream-dark); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 6px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    .gallery-grid img:first-child {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+
+    /* SPECIALTIES */
+    .specialties { background: var(--white); }
+
+    .specialties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .specialty-card {
+      background: var(--cream);
+      border: 1px solid var(--gold-light);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: all 0.3s;
+      border-top: 3px solid var(--green-mid);
+    }
+
+    .specialty-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      border-top-color: var(--gold);
+    }
+
+    .specialty-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .specialty-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--green-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .specialty-card p {
+      color: var(--text-light);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* TIMINGS */
+    .timings {
+      background: linear-gradient(135deg, var(--green-dark), #3d6b1f);
+      color: var(--white);
+    }
+
+    .timings .section-title { color: var(--white); }
+    .timings .section-label { color: var(--gold-light); }
+
+    .timings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .timing-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .timing-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .timing-card p { color: rgba(255,255,255,0.85); font-size: 0.95rem; }
+
+    /* CONTACT */
+    .contact { background: var(--cream-dark); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      font-size: 1.3rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item p { color: var(--text-mid); line-height: 1.6; }
+    .contact-item a { color: var(--green-mid); text-decoration: none; }
+    .contact-item a:hover { color: var(--green-dark); }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25D366;
+      color: var(--white);
+      padding: 0.85rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background 0.2s;
+    }
+
+    .whatsapp-btn:hover { background: #128C7E; }
+
+    /* FOOTER */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.8);
+      padding: 3rem 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold-light); }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 1.5rem 0;
+    }
+
+    .footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+
+    /* MOBILE NAV TOGGLE */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--green-dark);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .hero-image { order: -1; }
+      .hero-image img { max-width: 280px; }
+      .hero-buttons { justify-content: center; }
+
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+      .about-image::after { display: none; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-grid img:first-child {
+        grid-column: span 2;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#home" class="nav-logo">
+      Krishna Ayurveda Clinic
+      <span>Dr. Swathi BAMS, MD (Ayu)</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#specialties">Specialties</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://wa.me/918971570637" class="nav-cta" target="_blank">Book Appointment</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="tagline">Authentic Ayurvedic Care</p>
+        <h1>Heal Naturally.<br><span>Live Fully.</span></h1>
+        <p>Expert Ayurvedic consultations by Dr. Swathi in Mulki, Mangalore. Rooted in ancient wisdom, tailored to your unique constitution.</p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/918971570637" class="btn-primary" target="_blank">Book a Consultation</a>
+          <a href="#about" class="btn-secondary">Meet Dr. Swathi</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/c46f96_804919ea75d747b48e22b1e7602103ee~mv2.jpeg" alt="Dr. Swathi - Ayurvedic Practitioner at Krishna Ayurveda Clinic Mulki Mangalore">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="images/c46f96_f8998f6cce094456bc45c3331a7b827f~mv2.jpeg" alt="Dr. Swathi BAMS MD Ayurveda - Krishna Ayurveda Clinic">
+        </div>
+        <div class="about-text">
+          <p class="section-label">The Visionary Behind</p>
+          <h2 class="section-title">Dr. Swathi<br>BAMS, MD (Ayu) Kayachikitsa</h2>
+          <div class="section-divider"></div>
+          <p>At the heart of Krishna Ayurveda Clinic is Dr. Swathi, a dedicated Ayurvedic physician committed to helping individuals achieve better health through the timeless wisdom of Ayurveda.</p>
+          <p>With a strong academic foundation and specialized training in Kayachikitsa (Internal Medicine), Dr. Swathi combines traditional Ayurvedic principles with a patient-centered approach to address the root cause of illnesses rather than merely treating symptoms.</p>
+          <p>Her practice focuses on promoting natural healing, restoring balance, and enhancing overall well-being. She is also trained in specialized Ayurvedic therapies such as <strong>Viddhakarma</strong> and <strong>Agnikarma</strong>, offering effective solutions for pain-related conditions.</p>
+          <div class="credentials">
+            <span class="credential-badge">BAMS</span>
+            <span class="credential-badge">MD (Ayu) Kayachikitsa</span>
+            <span class="credential-badge">Viddhakarma</span>
+            <span class="credential-badge">Agnikarma</span>
+            <span class="credential-badge">Panchakarma</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-inner">
+      <p class="section-label">Our Clinic</p>
+      <h2 class="section-title">A Healing Space</h2>
+      <div class="section-divider"></div>
+      <div class="gallery-grid">
+        <img src="images/c46f96_fd13c10196604cb5ab195f09cacd57a0~mv2.jpeg" alt="Krishna Ayurveda Clinic Mulki Interior">
+        <img src="images/c46f96_a67bfcea90f94be1a63740aed492b00c~mv2.jpeg" alt="Ayurvedic Treatment Room">
+        <img src="images/c46f96_3c6cce537d774a50b344dc2547e3bff1~mv2.jpeg" alt="Ayurvedic Herbs and Medicines">
+        <img src="images/c46f96_92831dc537c04730bcc72deffc14dab2~mv2.jpeg" alt="Dr Swathi Consultation">
+        <img src="images/c46f96_f3ffdbca635f47f18977e3bdc8a857af~mv2.jpg" alt="Ayurvedic Therapy">
+        <img src="images/c46f96_e51548f80e97447ab8cdad96a1ad249e~mv2.jpg" alt="Natural Ayurvedic Medicines">
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALTIES -->
+  <section class="specialties" id="specialties">
+    <div class="section-inner">
+      <p class="section-label">What We Treat</p>
+      <h2 class="section-title">Specialized Care</h2>
+      <div class="section-divider"></div>
+      <p style="color: var(--text-light); max-width: 600px; margin-bottom: 0;">Comprehensive Ayurvedic management for chronic conditions, focusing on long-term wellness and balanced health.</p>
+      <div class="specialties-grid">
+        <div class="specialty-card">
+          <div class="specialty-icon">🩺</div>
+          <h3>Diabetes Management</h3>
+          <p>Tailored herbal formulations and dietary modifications to regulate blood sugar levels and improve pancreatic function naturally.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="specialty-icon">❤️</div>
+          <h3>Hypertension Care</h3>
+          <p>Reducing arterial tension through herbal tonics and lifestyle adjustments for sustainable blood pressure control.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="specialty-icon">🦴</div>
+          <h3>Pain Management</h3>
+          <p>Addressing chronic pain and inflammation using Ayurvedic herbal preparations including Agnikarma and Viddhakarma therapies.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="specialty-icon">🌿</div>
+          <h3>Gastrointestinal Health</h3>
+          <p>Specialized care for digestive disorders including ulcers and gastritis through targeted herbal therapies and nutritional guidance.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="specialty-icon">🌸</div>
+          <h3>Women's Health</h3>
+          <p>Holistic management of PCOD, menstrual disorders, and hormonal imbalances through Ayurvedic protocols.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="specialty-icon">🫁</div>
+          <h3>Respiratory Conditions</h3>
+          <p>Natural treatment for asthma, sinusitis, and chronic respiratory ailments using traditional Ayurvedic formulations.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="specialty-icon">✨</div>
+          <h3>Skin Disorders</h3>
+          <p>Authentic Ayurvedic treatments for eczema, psoriasis, and other skin conditions addressing the root cause.</p>
+        </div>
+        <div class="specialty-card">
+          <div class="specialty-icon">🧘</div>
+          <h3>Panchakarma Guidance</h3>
+          <p>Expert consultation and guidance for Panchakarma detoxification therapies tailored to your Prakriti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMINGS -->
+  <section class="timings">
+    <div class="section-inner">
+      <p class="section-label">Clinic Hours</p>
+      <h2 class="section-title">When to Visit</h2>
+      <div class="section-divider" style="background: var(--gold);"></div>
+      <div class="timings-grid">
+        <div class="timing-card">
+          <h3>Morning</h3>
+          <p>Monday – Thursday</p>
+          <p><strong style="color: var(--gold-light);">10:00 AM – 12:00 PM</strong></p>
+        </div>
+        <div class="timing-card">
+          <h3>Evening</h3>
+          <p>Monday – Thursday</p>
+          <p><strong style="color: var(--gold-light);">5:00 PM – 7:00 PM</strong></p>
+        </div>
+        <div class="timing-card">
+          <h3>Appointments</h3>
+          <p>Preferred for all consultations</p>
+          <p><strong style="color: var(--gold-light);">WhatsApp / Call</strong></p>
+        </div>
+        <div class="timing-card">
+          <h3>Emergency</h3>
+          <p>Please call directly for</p>
+          <p><strong style="color: var(--gold-light);">Urgent Consultations</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Visit Us</h2>
+      <div class="section-divider"></div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>General Inquiries</h3>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <p>Jalaka Road, Bappanadu Village,<br>Mulki – 574 154, Mangalore,<br>Karnataka, India</p>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <p><a href="tel:+918971570637">+91 89715 70637</a></p>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <p><a href="mailto:krishnaayurclinic@gmail.com">krishnaayurclinic@gmail.com</a></p>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🕐</span>
+            <p>Mon–Thu: 10AM–12PM & 5PM–7PM</p>
+          </div>
+          <a href="https://wa.me/918971570637" class="whatsapp-btn" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Get in Touch on WhatsApp
+          </a>
+        </div>
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d74.7854!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzU3LjciTiA3NMKwNDcnMDcuNCJF!5e0!3m2!1sen!2sin!4v1"
+            allowfullscreen
+            loading="lazy"
+            title="Krishna Ayurveda Clinic Location Mulki Mangalore">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-logo">Krishna Ayurveda Clinic</p>
+      <p class="footer-tagline">Authentic Ayurveda · Mulki, Mangalore</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#specialties">Specialties</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/918971570637" target="_blank">WhatsApp</a>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-copy">© 2026 Krishna Ayurveda Clinic · Dr. Swathi BAMS, MD (Ayu) · Mulki, Mangalore · +91 89715 70637</p>
+    </div>
+  </footer>
+
+</body>
+</html>
