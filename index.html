@@ -726,6 +726,295 @@
 
     .footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
 
+    /* =====================
+       BEAUTIFICATION STYLES
+       ===================== */
+
+    /* Scroll Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Hero text animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-text .tagline  { animation: fadeUp 0.8s ease 0.2s both; }
+    .hero-text h1        { animation: fadeUp 0.8s ease 0.4s both; }
+    .hero-text p         { animation: fadeUp 0.8s ease 0.6s both; }
+    .hero-buttons        { animation: fadeUp 0.8s ease 0.8s both; }
+    .hero-content > img  { animation: fadeUp 0.8s ease 0.1s both; }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      animation: fadeUp 1s ease 1.2s both;
+    }
+    .scroll-indicator span {
+      display: block;
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.6));
+      animation: scrollLine 1.5s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+    }
+
+    /* Decorative lotus divider */
+    .lotus-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.75rem 0 2rem;
+    }
+    .lotus-divider::before,
+    .lotus-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+    .lotus-divider::after {
+      background: linear-gradient(to left, transparent, var(--gold));
+    }
+    .lotus-divider svg {
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
+
+    /* Nav active state */
+    .nav-links a.active {
+      color: var(--green-mid);
+      font-weight: 600;
+    }
+    .nav-links a.active::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-top: 2px;
+    }
+
+    /* Enhanced specialty cards */
+    .specialty-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .specialty-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(74,124,46,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .specialty-card:hover::before { opacity: 1; }
+    .specialty-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    .specialty-card:hover .specialty-icon { transform: scale(1.2) rotate(-5deg); }
+
+    /* About section floating accent */
+    .about-image {
+      position: relative;
+    }
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, var(--gold-light) 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.6;
+      z-index: 0;
+      animation: floatAccent 4s ease-in-out infinite;
+    }
+    @keyframes floatAccent {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    /* Ayurvedic leaf pattern background for sections */
+    .pattern-bg {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234a7c2e' fill-opacity='0.04'%3E%3Cpath d='M30 0C13.4 0 0 13.4 0 30s13.4 30 30 30 30-13.4 30-30S46.6 0 30 0zm0 54C16.7 54 6 43.3 6 30S16.7 6 30 6s24 10.7 24 24-10.7 24-24 24z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Section number accents */
+    .section-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      opacity: 0.4;
+      line-height: 1;
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Stat counters in about */
+    .stats-row {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* WhatsApp floating button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 99;
+      background: #25D366;
+      color: white;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+    }
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #25D366;
+      animation: waPulse 2s ease-out infinite;
+      z-index: -1;
+    }
+    @keyframes waPulse {
+      0%   { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    /* Enhanced section divider */
+    .section-divider {
+      display: none; /* replaced by lotus-divider */
+    }
+
+    /* Gradient text for hero span */
+    .hero-text h1 span {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Footer wave top */
+    footer {
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: var(--green-dark);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    /* Timings section enhanced cards */
+    .timing-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .timing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+    .timing-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .timing-card:hover::after { transform: scaleX(1); }
+
     /* MOBILE NAV TOGGLE */
     .nav-toggle {
       display: none;
@@ -873,20 +1162,26 @@
         </div>
       </div>
 
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about" id="about">
+  <section class="about pattern-bg" id="about">
     <div class="section-inner">
       <div class="about-grid">
-        <div class="about-image">
+        <div class="about-image reveal-left">
           <img src="images/dr-swathi.png" alt="Dr. Swathi BAMS MD Ayurveda - Krishna Ayurveda Clinic">
         </div>
-        <div class="about-text">
+        <div class="about-text reveal-right">
           <p class="section-label">Meet the Doctor</p>
           <h2 class="section-title">Dr. Swathi<br>BAMS, MD (Ayu) Kayachikitsa</h2>
-          <div class="section-divider"></div>
+          <div class="lotus-divider">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C9 6 6 8 6 12c0 3.3 2.7 6 6 6s6-2.7 6-6c0-4-3-6-6-10z" fill="#c9a84c" opacity="0.7"/><path d="M12 8C10 10 8 11 8 13c0 2.2 1.8 4 4 4s4-1.8 4-4c0-2-2-3-4-5z" fill="#c9a84c"/></svg>
+          </div>
           <p>At the heart of Krishna Ayurveda Clinic is Dr. Swathi, a dedicated Ayurvedic physician committed to helping individuals achieve better health through the timeless wisdom of Ayurveda.</p>
           <p>With a strong academic foundation and specialized training in Kayachikitsa (Internal Medicine), Dr. Swathi combines traditional Ayurvedic principles with a patient-centered approach to address the root cause of illnesses rather than merely treating symptoms.</p>
           <p>Her practice focuses on promoting natural healing, restoring balance, and enhancing overall well-being. She is also trained in specialized Ayurvedic therapies such as <strong>Viddhakarma</strong> and <strong>Agnikarma</strong>, offering effective solutions for pain-related conditions.</p>
@@ -897,6 +1192,20 @@
             <span class="credential-badge">Agnikarma</span>
             <span class="credential-badge">Panchakarma</span>
           </div>
+          <div class="stats-row">
+            <div class="stat-item">
+              <div class="stat-number">8+</div>
+              <div class="stat-label">Specialties</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Natural Healing</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">❤️</div>
+              <div class="stat-label">Patient First</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -905,9 +1214,11 @@
   <!-- GALLERY -->
   <section class="gallery" id="gallery">
     <div class="section-inner">
-      <p class="section-label">Our Clinic in Mulki</p>
-      <h2 class="section-title">A Healing Space — Krishna Ayurveda Clinic</h2>
-      <div class="section-divider"></div>
+      <p class="section-label reveal">Our Clinic in Mulki</p>
+      <h2 class="section-title reveal reveal-delay-1">A Healing Space — Krishna Ayurveda Clinic</h2>
+      <div class="lotus-divider reveal reveal-delay-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C9 6 6 8 6 12c0 3.3 2.7 6 6 6s6-2.7 6-6c0-4-3-6-6-10z" fill="#c9a84c" opacity="0.7"/><path d="M12 8C10 10 8 11 8 13c0 2.2 1.8 4 4 4s4-1.8 4-4c0-2-2-3-4-5z" fill="#c9a84c"/></svg>
+      </div>
       <div class="carousel-wrapper">
         <div class="carousel-track-outer">
           <div class="carousel-track" id="carouselTrack">
@@ -945,12 +1256,14 @@
   <!-- SPECIALTIES -->
   <section class="specialties" id="specialties">
     <div class="section-inner">
-      <p class="section-label">What We Treat</p>
-      <h2 class="section-title">Ayurvedic Treatments & Specialties in Mangalore</h2>
-      <div class="section-divider"></div>
-      <p style="color: var(--text-light); max-width: 600px; margin-bottom: 0;">Comprehensive Ayurvedic management for chronic conditions, focusing on long-term wellness and balanced health.</p>
+      <p class="section-label reveal">What We Treat</p>
+      <h2 class="section-title reveal reveal-delay-1">Ayurvedic Treatments & Specialties in Mangalore</h2>
+      <div class="lotus-divider reveal reveal-delay-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C9 6 6 8 6 12c0 3.3 2.7 6 6 6s6-2.7 6-6c0-4-3-6-6-10z" fill="#c9a84c" opacity="0.7"/><path d="M12 8C10 10 8 11 8 13c0 2.2 1.8 4 4 4s4-1.8 4-4c0-2-2-3-4-5z" fill="#c9a84c"/></svg>
+      </div>
+      <p class="reveal reveal-delay-3" style="color: var(--text-light); max-width: 600px; margin-bottom: 0;">Comprehensive Ayurvedic management for chronic conditions, focusing on long-term wellness and balanced health.</p>
       <div class="specialties-grid">
-        <div class="specialty-card">
+        <div class="specialty-card reveal reveal-delay-1">
           <div class="specialty-icon">🩺</div>
           <h3>Diabetes Management</h3>
           <p>Tailored herbal formulations and dietary modifications to regulate blood sugar levels and improve pancreatic function naturally.</p>
@@ -997,9 +1310,11 @@
   <!-- SERVICES MENU -->
   <section style="background: var(--white); padding: 4rem 2rem;">
     <div class="section-inner">
-      <p class="section-label">Our Services</p>
-      <h2 class="section-title" style="margin-bottom:0.5rem;">Services at a Glance</h2>
-      <div class="section-divider"></div>
+      <p class="section-label reveal">Our Services</p>
+      <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:0.5rem;">Services at a Glance</h2>
+      <div class="lotus-divider reveal reveal-delay-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C9 6 6 8 6 12c0 3.3 2.7 6 6 6s6-2.7 6-6c0-4-3-6-6-10z" fill="#c9a84c" opacity="0.7"/><path d="M12 8C10 10 8 11 8 13c0 2.2 1.8 4 4 4s4-1.8 4-4c0-2-2-3-4-5z" fill="#c9a84c"/></svg>
+      </div>
       <p style="color:var(--text-light); margin-bottom:2rem; font-size:0.95rem;">Available in English & Kannada for our local community.</p>
       <div class="services-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
         <div style="text-align:center;">
@@ -1021,9 +1336,11 @@
   <!-- TIMINGS -->
   <section class="timings">
     <div class="section-inner">
-      <p class="section-label">Clinic Hours — Mulki, Mangalore</p>
-      <h2 class="section-title">When to Visit Krishna Ayurveda Clinic</h2>
-      <div class="section-divider" style="background: var(--gold);"></div>
+      <p class="section-label reveal">Clinic Hours — Mulki, Mangalore</p>
+      <h2 class="section-title reveal reveal-delay-1">When to Visit Krishna Ayurveda Clinic</h2>
+      <div class="lotus-divider reveal reveal-delay-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C9 6 6 8 6 12c0 3.3 2.7 6 6 6s6-2.7 6-6c0-4-3-6-6-10z" fill="#e8d5a3" opacity="0.9"/><path d="M12 8C10 10 8 11 8 13c0 2.2 1.8 4 4 4s4-1.8 4-4c0-2-2-3-4-5z" fill="#e8d5a3"/></svg>
+      </div>
       <div class="timings-grid">
         <div class="timing-card">
           <h3>Morning</h3>
@@ -1057,9 +1374,11 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="section-inner">
-      <p class="section-label">Get in Touch</p>
-      <h2 class="section-title">Visit Us in Mulki, Mangalore</h2>
-      <div class="section-divider"></div>
+      <p class="section-label reveal">Get in Touch</p>
+      <h2 class="section-title reveal reveal-delay-1">Visit Us in Mulki, Mangalore</h2>
+      <div class="lotus-divider reveal reveal-delay-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C9 6 6 8 6 12c0 3.3 2.7 6 6 6s6-2.7 6-6c0-4-3-6-6-10z" fill="#c9a84c" opacity="0.7"/><path d="M12 8C10 10 8 11 8 13c0 2.2 1.8 4 4 4s4-1.8 4-4c0-2-2-3-4-5z" fill="#c9a84c"/></svg>
+      </div>
       <div class="contact-grid">
         <div class="contact-info">
           <h3>General Inquiries</h3>
@@ -1098,6 +1417,11 @@
       </div>
     </div>
   </section>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/918971570637" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
 
   <!-- FOOTER -->
   <footer>
@@ -1192,10 +1516,38 @@
     navToggle.addEventListener('click', function() {
       navLinks.classList.toggle('open');
     });
-    // Close nav when a link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
+
+    // Scroll reveal animation
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    const activeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => activeObserver.observe(s));
   </script>
 </body>
 </html>
